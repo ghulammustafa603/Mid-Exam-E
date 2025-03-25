@@ -2,30 +2,30 @@ import React from 'react'
 
 const CountDownLightSwitch = () => {
   return (
-    <div class="container">
+    <div className="container">
     {/* <!-- Header with Title and Theme Toggle --> */}
-    <div class="header">
+    <div className="header">
       <h1>Countdown & Light Switch</h1>
-      <div class="toggle-container">
-        <label class="toggle-switch">
+      <div className="toggle-container">
+        <label className="toggle-switch">
           <input type="checkbox" id="themeToggle" />
-          <span class="slider"></span>
+          <span className="slider"></span>
         </label>
         <span>Light Mode</span>
       </div>
     </div>
 
     {/* <!-- Timer and Progress Section --> */}
-    <div class="timer-section">
-      <div class="progress-bar">
-        <div class="progress" id="progress"></div>
+    <div className="timer-section">
+      <div className="progress-bar">
+        <div className="progress" id="progress"></div>
       </div>
-      <div class="timer" id="timerDisplay">30s</div>
-      <div class="btn-group">
+      <div className="timer" id="timerDisplay">30s</div>
+      <div className="btn-group">
         <button id="startButton">Start Timer</button>
         <button id="resetButton" style="display: none;">Reset Timer</button>
       </div>
-      <div class="message" id="messageArea"></div>
+      <div className="message" id="messageArea"></div>
     </div>
   </div>
 

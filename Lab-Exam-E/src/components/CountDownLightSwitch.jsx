@@ -1,35 +1,28 @@
-import React from 'react'
+import React, { useState } from "react";
+import "./CountDownLightSwitch.css";
 
-const CountDownLightSwitch = () => {
+const CountdownThemeToggle = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setDarkMode((prevMode) => !prevMode);
+  };
+
   return (
-    <div className="container">
-    {/* <!-- Header with Title and Theme Toggle --> */}
-    <div className="header">
-      <h1>Countdown & Light Switch</h1>
-      <div className="toggle-container">
-        <label className="toggle-switch">
-          <input type="checkbox" id="themeToggle" />
-          <span className="slider"></span>
-        </label>
-        <span>Light Mode</span>
+    <div className={`container ${darkMode ? "dark-theme" : "light-theme"}`}>
+      {/* Header */}
+      <div className="header">
+        <h1>Light Switch</h1>
+        <div className="toggle-container">
+          <label className="toggle-switch">
+            <input type="checkbox" onChange={toggleTheme} />
+            <span className="slider"></span>
+          </label>
+          <span>{darkMode ? "Dark Mode" : "Light Mode"}</span>
+        </div>
       </div>
     </div>
+  );
+};
 
-    {/* <!-- Timer and Progress Section --> */}
-    <div className="timer-section">
-      <div className="progress-bar">
-        <div className="progress" id="progress"></div>
-      </div>
-      <div className="timer" id="timerDisplay">30s</div>
-      <div className="btn-group">
-        <button id="startButton">Start Timer</button>
-        <button id="resetButton" style="display: none;">Reset Timer</button>
-      </div>
-      <div className="message" id="messageArea"></div>
-    </div>
-  </div>
-
-     )
-}
-
-export default CountDownLightSwitch
+export default CountdownThemeToggle;
